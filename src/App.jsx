@@ -22,8 +22,8 @@ function App() {
   const [categories, setCategories] = useState([]);
   const [searchOne, setSearchOne] = useState("");
   const [openModal, setOpenModal] = useState(false);
-  const [openPanel, setOpenPanel] = useState(false); // State for Panel Modal
-  const [selectedCategory, setSelectedCategory] = useState(0); // State for selected Tab
+  const [openPanel, setOpenPanel] = useState(false); 
+  const [selectedCategory, setSelectedCategory] = useState(0);
   const [newCategory, setNewCategory] = useState("");
 
   useEffect(() => {
@@ -96,7 +96,7 @@ function App() {
   }));
 
   const handlePanelSave = () => {
-    // Handle widget deletion for unchecked widgets
+    
     const updatedCategories = categories.map(cat => ({
       ...cat,
       widgets: cat.widgets.filter(widget => widget.checked !== false)
@@ -142,7 +142,7 @@ function App() {
           </Button>
           <Button
             variant="outlined"
-            onClick={() => setOpenPanel(true)} // Open the Panel Modal
+            onClick={() => setOpenPanel(true)} 
             sx={{ marginLeft: 2 }}
           >
             Panel
@@ -218,7 +218,7 @@ function App() {
         ))}
       </Grid>
 
-      {/* Add/Edit Widget Modal */}
+    
       <Modal
         open={openModal}
         onClose={() => setOpenModal(false)}
@@ -289,7 +289,7 @@ function App() {
         </Box>
       </Modal>
 
-      {/* Panel Modal */}
+      
       <Modal
         open={openPanel}
         onClose={() => setOpenPanel(false)}
